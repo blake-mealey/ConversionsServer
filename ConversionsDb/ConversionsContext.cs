@@ -21,11 +21,13 @@ namespace ConversionsDb
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region Units
             modelBuilder.ApplyConfiguration(new UnitConfiguration());
             modelBuilder.ApplyConfiguration(new UnitTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UnitTypeMapConfiguration());
             modelBuilder.ApplyConfiguration(new BaseUnitMapConfiguration());
             modelBuilder.ApplyConfiguration(new RelativeValueConfiguration());
+            #endregion
         }
 
         #region Units
