@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ConversionsDb.SeedData;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConversionsDb.Models.Units
@@ -19,5 +23,31 @@ namespace ConversionsDb.Models.Units
 
         [ForeignKey("UnitId")]
         public Unit Unit { get; set; }
+    }
+
+    public class UnitTypeMapConfiguration : IEntityTypeConfiguration<UnitTypeMap>
+    {
+        private EntityTypeBuilder<UnitTypeMap> _builder;
+
+        public void Configure(EntityTypeBuilder<UnitTypeMap> builder)
+        {
+            _builder = builder;
+
+            _builder.HasKey(u => new
+            {
+                u.UnitTypeId,
+                u.UnitId
+            });
+
+            AddMaps(UnitTypeData.Distance, UnitData.LengthUnits);
+        }
+
+        private void AddMaps(UnitType type, IEnumerable<Unit> units)
+        {
+            foreach (var unit in UnitData.LengthUnits)
+            {
+                _builder.HasData(new { UnitTypeId = type.Id, UnitId = unit.Id });
+            }
+        }
     }
 }

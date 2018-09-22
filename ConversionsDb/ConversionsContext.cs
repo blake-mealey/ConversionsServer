@@ -9,6 +9,8 @@ namespace ConversionsDb
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //            System.Diagnostics.Debugger.Launch();
+
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
@@ -19,25 +21,11 @@ namespace ConversionsDb
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            #region Units
-            modelBuilder.Entity<UnitTypeMap>().HasKey(u => new
-            {
-                u.UnitTypeId,
-                u.UnitId
-            });
-
-            modelBuilder.Entity<BaseUnitMap>().HasKey(u => new
-            {
-                u.UnitTypeId,
-                u.UnitId
-            });
-
-            modelBuilder.Entity<RelativeValue>().HasKey(u => new
-            {
-                u.BaseUnitId,
-                u.UnitId
-            });
-            #endregion
+            modelBuilder.ApplyConfiguration(new UnitConfiguration());
+            modelBuilder.ApplyConfiguration(new UnitTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new UnitTypeMapConfiguration());
+            modelBuilder.ApplyConfiguration(new BaseUnitMapConfiguration());
+            modelBuilder.ApplyConfiguration(new RelativeValueConfiguration());
         }
 
         #region Units

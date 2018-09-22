@@ -56,7 +56,8 @@ namespace ConversionsDb.Migrations
                         column: x => x.BaseUnitId,
                         principalSchema: "Units",
                         principalTable: "Unit",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_RelativeValue_Unit_UnitId",
                         column: x => x.UnitId,
@@ -71,18 +72,19 @@ namespace ConversionsDb.Migrations
                 columns: table => new
                 {
                     UnitTypeId = table.Column<int>(nullable: false),
-                    UnitId = table.Column<int>(nullable: false)
+                    BaseUnitId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BaseUnitMap", x => new { x.UnitTypeId, x.UnitId });
-                    table.UniqueConstraint("AK_BaseUnitMap_UnitId_UnitTypeId", x => new { x.UnitId, x.UnitTypeId });
+                    table.PrimaryKey("PK_BaseUnitMap", x => new { x.UnitTypeId, x.BaseUnitId });
+                    table.UniqueConstraint("AK_BaseUnitMap_BaseUnitId_UnitTypeId", x => new { x.BaseUnitId, x.UnitTypeId });
                     table.ForeignKey(
-                        name: "FK_BaseUnitMap_Unit_UnitId",
-                        column: x => x.UnitId,
+                        name: "FK_BaseUnitMap_Unit_BaseUnitId",
+                        column: x => x.BaseUnitId,
                         principalSchema: "Units",
                         principalTable: "Unit",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_BaseUnitMap_UnitType_UnitTypeId",
                         column: x => x.UnitTypeId,
@@ -116,7 +118,8 @@ namespace ConversionsDb.Migrations
                         column: x => x.UnitTypeId,
                         principalSchema: "Units",
                         principalTable: "UnitType",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
