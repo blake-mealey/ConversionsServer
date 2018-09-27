@@ -7,7 +7,7 @@ namespace ConversionsDal.Dals.Units
 {
     public interface IUnitDal
     {
-        List<UnitEntity> GetAllUnits();
+        List<UnitEntity> GetUnits(int unitTypeId);
     }
 
     public class UnitDal : BaseDal, IUnitDal
@@ -19,12 +19,12 @@ namespace ConversionsDal.Dals.Units
             _db = db;
         }
 
-        public List<UnitEntity> GetAllUnits()
+        public List<UnitEntity> GetUnits(int unitTypeId)
         {
             return (from u in _db.Units
-                    select new UnitEntity(u, from rv in _db.RelativeValues
-                                             join u2 in _db.Units on new { u.Id, rv.UnitId } equals new { u2.Id, UnitId = u.Id }
-                                             select rv)).ToList();
+                    join utm in _db.UnitTypeMaps on u.Id equals utm.UnitId
+                    where utm.UnitTypeId == unitTypeId
+                    select new UnitEntity(u)).ToList();
         }
     }
 }

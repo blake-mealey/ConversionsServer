@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System.Collections.Generic;
 
 namespace ConversionsClientModels.Models.Units
 {
@@ -12,7 +11,5 @@ namespace ConversionsClientModels.Models.Units
         public string DisplayName;
 
         public string Symbol;
-
-        public List<RelativeValueClientModel> RelativeValues;
     }
 }

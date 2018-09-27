@@ -2,13 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ConversionsDb.Migrations
 {
     [DbContext(typeof(ConversionsContext))]
-    partial class ConversionsContextModelSnapshot : ModelSnapshot
+    [Migration("20180925051909_RelativeValueToConversions")]
+    partial class RelativeValueToConversions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,7 +59,7 @@ namespace ConversionsDb.Migrations
                         new { FromUnitId = 10, ToUnitId = 2, Multiplier = 0.3048 },
                         new { FromUnitId = 8, ToUnitId = 10, Multiplier = 5280.0 },
                         new { FromUnitId = 9, ToUnitId = 10, Multiplier = 3.0 },
-                        new { FromUnitId = 10, ToUnitId = 11, Multiplier = 12.0 },
+                        new { FromUnitId = 11, ToUnitId = 10, Multiplier = 12.0 },
                         new { FromUnitId = 12, ToUnitId = 10, Multiplier = 6076.12 }
                     );
                 });

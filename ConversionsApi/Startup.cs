@@ -61,6 +61,8 @@ namespace ConversionsApi
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.AllowAnyHeader().WithOrigins(Configuration["AllowedHosts"]));
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }
@@ -72,10 +74,11 @@ namespace ConversionsApi
             #region DALs
             _container.Register<IUnitDal, UnitDal>();
             _container.Register<IUnitTypeDal, UnitTypeDal>();
+            _container.Register<IConversionDal, ConversionDal>();
             #endregion
 
             #region Services
-            _container.Register<IUnitsService, UnitsService>();
+            _container.Register<IConversionsService, ConversionsService>();
             #endregion
 
             _container.AutoCrossWireAspNetComponents(app);

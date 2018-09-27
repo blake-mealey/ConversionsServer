@@ -86,13 +86,24 @@ namespace ConversionsDb.SeedData
         public static readonly Unit NauticalMile = new Unit
         {
             Id = 12,
-            DisplayName = "NauticalMile",
+            DisplayName = "Nautical Mile",
             Symbol = "nmi"
         };
 
         public static readonly List<Unit> LengthUnits = new List<Unit>
         {
-            Kilometre, Metre, Decimetre, Centimetre, Millimetre, Micrometre, Nanometre, Mile, Yard, Foot, Inch, NauticalMile
+            Kilometre,
+            Metre,
+            Decimetre,
+            Centimetre,
+            Millimetre,
+            Micrometre,
+            Nanometre,
+            Mile,
+            Yard,
+            Foot,
+            Inch,
+            NauticalMile
         };
         #endregion
     }

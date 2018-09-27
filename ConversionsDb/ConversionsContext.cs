@@ -16,7 +16,9 @@ namespace ConversionsDb
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("Conversions"));
+            optionsBuilder
+                //                .UseLazyLoadingProxies()
+                .UseSqlServer(configuration.GetConnectionString("Conversions"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,7 +41,7 @@ namespace ConversionsDb
 
         public DbSet<BaseUnitMap> BaseUnitMaps { get; set; }
 
-        public DbSet<RelativeValue> RelativeValues { get; set; }
+        public DbSet<Conversion> Conversions { get; set; }
         #endregion
     }
 }

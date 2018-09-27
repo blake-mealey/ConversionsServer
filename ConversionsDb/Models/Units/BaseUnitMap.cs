@@ -14,14 +14,14 @@ namespace ConversionsDb.Models.Units
         public int UnitTypeId { get; set; }
 
         [ForeignKey("UnitTypeId")]
-        public UnitType UnitType { get; set; }
+        public virtual UnitType UnitType { get; set; }
 
         [Key]
         [Column(Order = 2)]
         public int BaseUnitId { get; set; }
 
         [ForeignKey("BaseUnitId")]
-        public Unit BaseUnit { get; set; }
+        public virtual Unit BaseUnit { get; set; }
     }
 
     public class BaseUnitMapConfiguration : IEntityTypeConfiguration<BaseUnitMap>

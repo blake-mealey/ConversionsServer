@@ -5,12 +5,10 @@ using System.Collections.Generic;
 namespace ConversionsClientModels.Models.Units
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
-    public class UnitTypeClientModel
+    public class UnitTypeConversionGraphClientModel
     {
-        public string DisplayName;
+        public UnitTypeClientModel UnitType;
 
-        public UnitClientModel BaseUnit;
-
-        public List<UnitClientModel> Units;
+        public Dictionary<int, Dictionary<int, double>> ConversionGraph;
     }
 }

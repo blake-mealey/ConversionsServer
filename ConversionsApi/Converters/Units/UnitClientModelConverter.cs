@@ -18,8 +18,7 @@ namespace ConversionsApi.Converters.Units
             {
                 DisplayName = entity.DisplayName,
                 Id = entity.Id,
-                Symbol = entity.Symbol,
-                RelativeValues = entity.RelativeValues.ToClientModels()
+                Symbol = entity.Symbol
             };
         }
     }

@@ -17,8 +17,8 @@ namespace ConversionsApi.Converters.Units
             return new UnitTypeClientModel
             {
                 DisplayName = entity.DisplayName,
-                BaseUnitId = entity.BaseUnit.Id,
-                UnitIds = entity.Units.Select(x => x.Id).ToList()
+                BaseUnit = entity.BaseUnit.ToClientModel(),
+                Units = entity.Units.ToClientModels()
             };
         }
     }
