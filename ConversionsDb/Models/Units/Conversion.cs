@@ -37,6 +37,7 @@ namespace ConversionsDb.Models.Units
                 u.ToUnitId
             });
 
+            builder.HasData(ConversionData.AreaConversions.ToArray());
             builder.HasData(ConversionData.DistanceConversions.ToArray());
         }
     }

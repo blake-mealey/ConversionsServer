@@ -25,6 +25,7 @@ namespace ConversionsDb.Models.Units
     {
         public void Configure(EntityTypeBuilder<Unit> builder)
         {
+            builder.HasData(UnitData.AreaUnits.ToArray());
             builder.HasData(UnitData.LengthUnits.ToArray());
         }
     }

@@ -5,6 +5,76 @@ namespace ConversionsDb.SeedData
 {
     public static class UnitData
     {
+        #region Area units
+        public static readonly Unit SquareKilometre = new Unit
+        {
+            Id = 13,
+            DisplayName = "Square Kilometre",
+            Symbol = "km²"
+        };
+
+        public static readonly Unit SquareMetre = new Unit
+        {
+            Id = 14,
+            DisplayName = "Square Metre",
+            Symbol = "m²"
+        };
+
+        public static readonly Unit SquareMile = new Unit
+        {
+            Id = 15,
+            DisplayName = "Square Mile",
+            Symbol = "mi²"
+        };
+
+        public static readonly Unit SquareYard = new Unit
+        {
+            Id = 16,
+            DisplayName = "Square Yard",
+            Symbol = "yd²"
+        };
+
+        public static readonly Unit SquareFoot = new Unit
+        {
+            Id = 17,
+            DisplayName = "Square Foot",
+            Symbol = "ft²"
+        };
+
+        public static readonly Unit SquareInch = new Unit
+        {
+            Id = 18,
+            DisplayName = "Square Inch",
+            Symbol = "in²"
+        };
+
+        public static readonly Unit Hectare = new Unit
+        {
+            Id = 19,
+            DisplayName = "Square Hectare",
+            Symbol = "ha"
+        };
+
+        public static readonly Unit Acre = new Unit
+        {
+            Id = 20,
+            DisplayName = "Square Acre",
+            Symbol = "ac"
+        };
+
+        public static readonly List<Unit> AreaUnits = new List<Unit>
+        {
+            SquareKilometre,
+            SquareMetre,
+            SquareMile,
+            SquareYard,
+            SquareFoot,
+            SquareInch,
+            Hectare,
+            Acre
+        };
+        #endregion
+
         #region Distance units
         public static readonly Unit Kilometre = new Unit
         {

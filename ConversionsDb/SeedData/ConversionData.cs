@@ -5,7 +5,69 @@ namespace ConversionsDb.SeedData
 {
     public static class ConversionData
     {
-        #region Distance Values
+        #region Area Conversions
+        private static readonly Conversion SquareKilometreToHectare = new Conversion
+        {
+            FromUnitId = UnitData.SquareKilometre.Id,
+            ToUnitId = UnitData.Hectare.Id,
+            Multiplier = 100.0
+        };
+
+        private static readonly Conversion SquareKilometreToSquareMetre = new Conversion
+        {
+            FromUnitId = UnitData.SquareKilometre.Id,
+            ToUnitId = UnitData.SquareMetre.Id,
+            Multiplier = 10000000.0
+        };
+
+        private static readonly Conversion SquareMileToSquareKilometre = new Conversion
+        {
+            FromUnitId = UnitData.SquareMile.Id,
+            ToUnitId = UnitData.SquareKilometre.Id,
+            Multiplier = 2.58999
+        };
+
+        private static readonly Conversion SquareMileToAcre = new Conversion
+        {
+            FromUnitId = UnitData.SquareMile.Id,
+            ToUnitId = UnitData.Acre.Id,
+            Multiplier = 640.0
+        };
+
+        private static readonly Conversion SquareMileToSquareYard = new Conversion
+        {
+            FromUnitId = UnitData.SquareMile.Id,
+            ToUnitId = UnitData.SquareYard.Id,
+            Multiplier = 3097600.0
+        };
+
+        private static readonly Conversion SquareMileToSquareFoot = new Conversion
+        {
+            FromUnitId = UnitData.SquareMile.Id,
+            ToUnitId = UnitData.SquareFoot.Id,
+            Multiplier = 27878400.0
+        };
+
+        private static readonly Conversion SquareMileToSquareInch = new Conversion
+        {
+            FromUnitId = UnitData.SquareMile.Id,
+            ToUnitId = UnitData.SquareInch.Id,
+            Multiplier = 4014489600.0
+        };
+
+        public static readonly List<Conversion> AreaConversions = new List<Conversion>
+        {
+            SquareKilometreToHectare,
+            SquareKilometreToSquareMetre,
+            SquareMileToSquareKilometre,
+            SquareMileToAcre,
+            SquareMileToSquareYard,
+            SquareMileToSquareFoot,
+            SquareMileToSquareInch
+        };
+        #endregion
+
+        #region Distance Conversion
         private static readonly Conversion KilometreToMetre = new Conversion
         {
             FromUnitId = UnitData.Kilometre.Id,

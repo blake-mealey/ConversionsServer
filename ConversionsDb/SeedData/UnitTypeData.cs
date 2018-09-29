@@ -5,6 +5,12 @@ namespace ConversionsDb.SeedData
 {
     public static class UnitTypeData
     {
+        public static readonly UnitType Area = new UnitType
+        {
+            Id = 2,
+            DisplayName = "Area"
+        };
+
         public static readonly UnitType Distance = new UnitType
         {
             Id = 1,
@@ -13,7 +19,7 @@ namespace ConversionsDb.SeedData
 
         private static readonly List<UnitType> UnitTypes = new List<UnitType>
         {
-            Distance
+            Area, Distance
         };
     }
 }
