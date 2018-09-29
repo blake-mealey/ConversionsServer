@@ -4,6 +4,7 @@ using ConversionsDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
@@ -63,7 +64,11 @@ namespace ConversionsApi
 
             app.UseCors(builder => builder.AllowAnyHeader().WithOrigins(Configuration["AllowedHosts"]));
 
-            app.UseHttpsRedirection();
+            //            app.UseHttpsRedirection();
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseMvc();
         }
 
