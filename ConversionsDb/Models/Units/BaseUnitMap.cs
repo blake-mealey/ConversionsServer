@@ -35,6 +35,7 @@ namespace ConversionsDb.Models.Units
             });
 
             builder.HasData(
+                new { UnitTypeId = UnitTypeData.Area.Id, BaseUnitId = UnitData.SquareKilometre.Id },
                 new { UnitTypeId = UnitTypeData.Distance.Id, BaseUnitId = UnitData.Metre.Id });
         }
     }
