@@ -3,14 +3,16 @@ using ConversionsDb;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConversionsDb.Migrations
 {
     [DbContext(typeof(ConversionsContext))]
-    partial class ConversionsContextModelSnapshot : ModelSnapshot
+    [Migration("20180929180217_FixHectareAndAcreDisplayName")]
+    partial class FixHectareAndAcreDisplayName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

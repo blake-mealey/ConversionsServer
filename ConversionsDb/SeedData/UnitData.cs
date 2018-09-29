@@ -51,14 +51,14 @@ namespace ConversionsDb.SeedData
         public static readonly Unit Hectare = new Unit
         {
             Id = 19,
-            DisplayName = "Square Hectare",
+            DisplayName = "Hectare",
             Symbol = "ha"
         };
 
         public static readonly Unit Acre = new Unit
         {
             Id = 20,
-            DisplayName = "Square Acre",
+            DisplayName = "Acre",
             Symbol = "ac"
         };
 
