@@ -160,7 +160,7 @@ namespace ConversionsDb.SeedData
             Symbol = "nmi"
         };
 
-        public static readonly List<Unit> LengthUnits = new List<Unit>
+        public static readonly List<Unit> DistanceUnits = new List<Unit>
         {
             Kilometre,
             Metre,

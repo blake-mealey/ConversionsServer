@@ -3,14 +3,16 @@ using ConversionsDb;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ConversionsDb.Migrations
 {
     [DbContext(typeof(ConversionsContext))]
-    partial class ConversionsContextModelSnapshot : ModelSnapshot
+    [Migration("20180929174741_SwapMetreConversions")]
+    partial class SwapMetreConversions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

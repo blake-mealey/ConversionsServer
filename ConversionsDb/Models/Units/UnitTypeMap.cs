@@ -39,12 +39,13 @@ namespace ConversionsDb.Models.Units
                 u.UnitId
             });
 
-            AddMaps(UnitTypeData.Distance, UnitData.LengthUnits);
+            AddMaps(UnitTypeData.Distance, UnitData.DistanceUnits);
+            AddMaps(UnitTypeData.Area, UnitData.AreaUnits);
         }
 
         private void AddMaps(UnitType type, IEnumerable<Unit> units)
         {
-            foreach (var unit in UnitData.LengthUnits)
+            foreach (var unit in units)
             {
                 _builder.HasData(new { UnitTypeId = type.Id, UnitId = unit.Id });
             }

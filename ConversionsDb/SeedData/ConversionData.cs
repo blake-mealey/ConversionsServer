@@ -75,39 +75,39 @@ namespace ConversionsDb.SeedData
             Multiplier = 1000.0
         };
 
-        private static readonly Conversion DecimetreToMetre = new Conversion
+        private static readonly Conversion MetreToDecimetre = new Conversion
         {
-            FromUnitId = UnitData.Decimetre.Id,
-            ToUnitId = UnitData.Metre.Id,
-            Multiplier = 0.1
+            FromUnitId = UnitData.Metre.Id,
+            ToUnitId = UnitData.Decimetre.Id,
+            Multiplier = 10.0
         };
 
-        private static readonly Conversion CentimetreToMetre = new Conversion
+        private static readonly Conversion MetreToCentimetre = new Conversion
         {
-            FromUnitId = UnitData.Centimetre.Id,
-            ToUnitId = UnitData.Metre.Id,
-            Multiplier = 0.01
+            FromUnitId = UnitData.Metre.Id,
+            ToUnitId = UnitData.Centimetre.Id,
+            Multiplier = 100.0
         };
 
-        private static readonly Conversion MillimetreToMetre = new Conversion
+        private static readonly Conversion MetreToMillimetre = new Conversion
         {
-            FromUnitId = UnitData.Millimetre.Id,
-            ToUnitId = UnitData.Metre.Id,
-            Multiplier = 0.001
+            FromUnitId = UnitData.Metre.Id,
+            ToUnitId = UnitData.Millimetre.Id,
+            Multiplier = 1000.0
         };
 
-        private static readonly Conversion MicrometreToMetre = new Conversion
+        private static readonly Conversion MetreToMicrometre = new Conversion
         {
-            FromUnitId = UnitData.Micrometre.Id,
-            ToUnitId = UnitData.Metre.Id,
-            Multiplier = 0.000001
+            FromUnitId = UnitData.Metre.Id,
+            ToUnitId = UnitData.Micrometre.Id,
+            Multiplier = 1000000.0
         };
 
-        private static readonly Conversion NanometreToMetre = new Conversion
+        private static readonly Conversion MetreToNanometre = new Conversion
         {
-            FromUnitId = UnitData.Nanometre.Id,
-            ToUnitId = UnitData.Metre.Id,
-            Multiplier = 0.000000001
+            FromUnitId = UnitData.Metre.Id,
+            ToUnitId = UnitData.Nanometre.Id,
+            Multiplier = 1000000000.0
         };
 
         private static readonly Conversion FootToMetre = new Conversion
@@ -148,11 +148,11 @@ namespace ConversionsDb.SeedData
         public static readonly List<Conversion> DistanceConversions = new List<Conversion>
         {
             KilometreToMetre,
-            DecimetreToMetre,
-            CentimetreToMetre,
-            MillimetreToMetre,
-            MicrometreToMetre,
-            NanometreToMetre,
+            MetreToDecimetre,
+            MetreToCentimetre,
+            MetreToMillimetre,
+            MetreToMicrometre,
+            MetreToNanometre,
             FootToMetre,
             MileToFoot,
             YardToFoot,
