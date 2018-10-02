@@ -1,4 +1,4 @@
-﻿using ConversionsDb.Models.Units;
+﻿using ConversionsDb.Models.Conversions;
 using System.Collections.Generic;
 
 namespace ConversionsDb.SeedData

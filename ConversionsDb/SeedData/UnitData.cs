@@ -1,4 +1,4 @@
-﻿using ConversionsDb.Models.Units;
+﻿using ConversionsDb.Models.Conversions;
 using System.Collections.Generic;
 
 namespace ConversionsDb.SeedData
@@ -8,58 +8,50 @@ namespace ConversionsDb.SeedData
         #region Area units
         public static readonly Unit SquareKilometre = new Unit
         {
-            Id = 13,
-            DisplayName = "Square Kilometre",
-            Symbol = "km²"
+            Symbol = "km²",
+            DisplayName = "Square Kilometre"
         };
 
         public static readonly Unit SquareMetre = new Unit
         {
-            Id = 14,
-            DisplayName = "Square Metre",
-            Symbol = "m²"
+            Symbol = "m²",
+            DisplayName = "Square Metre"
         };
 
         public static readonly Unit SquareMile = new Unit
         {
-            Id = 15,
-            DisplayName = "Square Mile",
-            Symbol = "mi²"
+            Symbol = "mi²",
+            DisplayName = "Square Mile"
         };
 
         public static readonly Unit SquareYard = new Unit
         {
-            Id = 16,
-            DisplayName = "Square Yard",
-            Symbol = "yd²"
+            Symbol = "yd²",
+            DisplayName = "Square Yard"
         };
 
         public static readonly Unit SquareFoot = new Unit
         {
-            Id = 17,
-            DisplayName = "Square Foot",
-            Symbol = "ft²"
+            Symbol = "ft²",
+            DisplayName = "Square Foot"
         };
 
         public static readonly Unit SquareInch = new Unit
         {
-            Id = 18,
-            DisplayName = "Square Inch",
-            Symbol = "in²"
+            Symbol = "in²",
+            DisplayName = "Square Inch"
         };
 
         public static readonly Unit Hectare = new Unit
         {
-            Id = 19,
-            DisplayName = "Hectare",
-            Symbol = "ha"
+            Symbol = "ha",
+            DisplayName = "Hectare"
         };
 
         public static readonly Unit Acre = new Unit
         {
-            Id = 20,
-            DisplayName = "Acre",
-            Symbol = "ac"
+            Symbol = "ac",
+            DisplayName = "Acre"
         };
 
         public static readonly List<Unit> AreaUnits = new List<Unit>
@@ -78,86 +70,74 @@ namespace ConversionsDb.SeedData
         #region Distance units
         public static readonly Unit Kilometre = new Unit
         {
-            Id = 1,
-            DisplayName = "Kilometre",
-            Symbol = "km"
+            Symbol = "km",
+            DisplayName = "Kilometre"
         };
 
         public static readonly Unit Metre = new Unit
         {
-            Id = 2,
-            DisplayName = "Metre",
-            Symbol = "m"
+            Symbol = "m",
+            DisplayName = "Metre"
         };
 
         public static readonly Unit Decimetre = new Unit
         {
-            Id = 3,
-            DisplayName = "Decimetre",
-            Symbol = "dm"
+            Symbol = "dm",
+            DisplayName = "Decimetre"
         };
 
         public static readonly Unit Centimetre = new Unit
         {
-            Id = 4,
-            DisplayName = "Centimetre",
-            Symbol = "cm"
+            Symbol = "cm",
+            DisplayName = "Centimetre"
         };
 
         public static readonly Unit Millimetre = new Unit
         {
-            Id = 5,
-            DisplayName = "Millimetre",
-            Symbol = "mm"
+            Symbol = "mm",
+            DisplayName = "Millimetre"
         };
 
         public static readonly Unit Micrometre = new Unit
         {
-            Id = 6,
-            DisplayName = "Micrometre",
-            Symbol = "μm"
+            Symbol = "μm",
+            DisplayName = "Micrometre"
         };
 
         public static readonly Unit Nanometre = new Unit
         {
-            Id = 7,
-            DisplayName = "Nanometre",
-            Symbol = "nm"
+            Symbol = "nm",
+            DisplayName = "Nanometre"
         };
 
         public static readonly Unit Mile = new Unit
         {
-            Id = 8,
-            DisplayName = "Mile",
-            Symbol = "mi"
+            Symbol = "mi",
+            DisplayName = "Mile"
         };
 
         public static readonly Unit Yard = new Unit
         {
-            Id = 9,
-            DisplayName = "Yard",
-            Symbol = "yd"
+            Symbol = "yd",
+            DisplayName = "Yard"
         };
 
         public static readonly Unit Foot = new Unit
         {
-            Id = 10,
-            DisplayName = "Foot",
-            Symbol = "ft"
+            Symbol = "ft",
+            DisplayName = "Foot"
         };
 
         public static readonly Unit Inch = new Unit
         {
-            Id = 11,
-            DisplayName = "Inch",
-            Symbol = "in"
+            Symbol = "in",
+            DisplayName = "Inch"
         };
 
         public static readonly Unit NauticalMile = new Unit
         {
-            Id = 12,
-            DisplayName = "Nautical Mile",
-            Symbol = "nmi"
+            Symbol = "nmi",
+            DisplayName = "Nautical Mile"
         };
 
         public static readonly List<Unit> DistanceUnits = new List<Unit>

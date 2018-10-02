@@ -1,4 +1,4 @@
-﻿using ConversionsDb.Models.Units;
+﻿using ConversionsDb.Models.Conversions;
 using System.Collections.Generic;
 
 namespace ConversionsDb.SeedData
@@ -8,50 +8,50 @@ namespace ConversionsDb.SeedData
         #region Area Conversions
         private static readonly Conversion SquareKilometreToHectare = new Conversion
         {
-            FromUnitId = UnitData.SquareKilometre.Id,
-            ToUnitId = UnitData.Hectare.Id,
+            FromUnitSymbol = UnitData.SquareKilometre.Symbol,
+            ToUnitSymbol = UnitData.Hectare.Symbol,
             Multiplier = 100.0
         };
 
         private static readonly Conversion SquareKilometreToSquareMetre = new Conversion
         {
-            FromUnitId = UnitData.SquareKilometre.Id,
-            ToUnitId = UnitData.SquareMetre.Id,
+            FromUnitSymbol = UnitData.SquareKilometre.Symbol,
+            ToUnitSymbol = UnitData.SquareMetre.Symbol,
             Multiplier = 10000000.0
         };
 
         private static readonly Conversion SquareMileToSquareKilometre = new Conversion
         {
-            FromUnitId = UnitData.SquareMile.Id,
-            ToUnitId = UnitData.SquareKilometre.Id,
+            FromUnitSymbol = UnitData.SquareMile.Symbol,
+            ToUnitSymbol = UnitData.SquareKilometre.Symbol,
             Multiplier = 2.58999
         };
 
         private static readonly Conversion SquareMileToAcre = new Conversion
         {
-            FromUnitId = UnitData.SquareMile.Id,
-            ToUnitId = UnitData.Acre.Id,
+            FromUnitSymbol = UnitData.SquareMile.Symbol,
+            ToUnitSymbol = UnitData.Acre.Symbol,
             Multiplier = 640.0
         };
 
         private static readonly Conversion SquareMileToSquareYard = new Conversion
         {
-            FromUnitId = UnitData.SquareMile.Id,
-            ToUnitId = UnitData.SquareYard.Id,
+            FromUnitSymbol = UnitData.SquareMile.Symbol,
+            ToUnitSymbol = UnitData.SquareYard.Symbol,
             Multiplier = 3097600.0
         };
 
         private static readonly Conversion SquareMileToSquareFoot = new Conversion
         {
-            FromUnitId = UnitData.SquareMile.Id,
-            ToUnitId = UnitData.SquareFoot.Id,
+            FromUnitSymbol = UnitData.SquareMile.Symbol,
+            ToUnitSymbol = UnitData.SquareFoot.Symbol,
             Multiplier = 27878400.0
         };
 
         private static readonly Conversion SquareMileToSquareInch = new Conversion
         {
-            FromUnitId = UnitData.SquareMile.Id,
-            ToUnitId = UnitData.SquareInch.Id,
+            FromUnitSymbol = UnitData.SquareMile.Symbol,
+            ToUnitSymbol = UnitData.SquareInch.Symbol,
             Multiplier = 4014489600.0
         };
 
@@ -70,78 +70,78 @@ namespace ConversionsDb.SeedData
         #region Distance Conversion
         private static readonly Conversion KilometreToMetre = new Conversion
         {
-            FromUnitId = UnitData.Kilometre.Id,
-            ToUnitId = UnitData.Metre.Id,
+            FromUnitSymbol = UnitData.Kilometre.Symbol,
+            ToUnitSymbol = UnitData.Metre.Symbol,
             Multiplier = 1000.0
         };
 
         private static readonly Conversion MetreToDecimetre = new Conversion
         {
-            FromUnitId = UnitData.Metre.Id,
-            ToUnitId = UnitData.Decimetre.Id,
+            FromUnitSymbol = UnitData.Metre.Symbol,
+            ToUnitSymbol = UnitData.Decimetre.Symbol,
             Multiplier = 10.0
         };
 
         private static readonly Conversion MetreToCentimetre = new Conversion
         {
-            FromUnitId = UnitData.Metre.Id,
-            ToUnitId = UnitData.Centimetre.Id,
+            FromUnitSymbol = UnitData.Metre.Symbol,
+            ToUnitSymbol = UnitData.Centimetre.Symbol,
             Multiplier = 100.0
         };
 
         private static readonly Conversion MetreToMillimetre = new Conversion
         {
-            FromUnitId = UnitData.Metre.Id,
-            ToUnitId = UnitData.Millimetre.Id,
+            FromUnitSymbol = UnitData.Metre.Symbol,
+            ToUnitSymbol = UnitData.Millimetre.Symbol,
             Multiplier = 1000.0
         };
 
         private static readonly Conversion MetreToMicrometre = new Conversion
         {
-            FromUnitId = UnitData.Metre.Id,
-            ToUnitId = UnitData.Micrometre.Id,
+            FromUnitSymbol = UnitData.Metre.Symbol,
+            ToUnitSymbol = UnitData.Micrometre.Symbol,
             Multiplier = 1000000.0
         };
 
         private static readonly Conversion MetreToNanometre = new Conversion
         {
-            FromUnitId = UnitData.Metre.Id,
-            ToUnitId = UnitData.Nanometre.Id,
+            FromUnitSymbol = UnitData.Metre.Symbol,
+            ToUnitSymbol = UnitData.Nanometre.Symbol,
             Multiplier = 1000000000.0
         };
 
         private static readonly Conversion FootToMetre = new Conversion
         {
-            FromUnitId = UnitData.Foot.Id,
-            ToUnitId = UnitData.Metre.Id,
+            FromUnitSymbol = UnitData.Foot.Symbol,
+            ToUnitSymbol = UnitData.Metre.Symbol,
             Multiplier = 0.3048
         };
 
         private static readonly Conversion MileToFoot = new Conversion
         {
-            FromUnitId = UnitData.Mile.Id,
-            ToUnitId = UnitData.Foot.Id,
+            FromUnitSymbol = UnitData.Mile.Symbol,
+            ToUnitSymbol = UnitData.Foot.Symbol,
             Multiplier = 5280.0
         };
 
         private static readonly Conversion YardToFoot = new Conversion
         {
-            FromUnitId = UnitData.Yard.Id,
-            ToUnitId = UnitData.Foot.Id,
+            FromUnitSymbol = UnitData.Yard.Symbol,
+            ToUnitSymbol = UnitData.Foot.Symbol,
             Multiplier = 3.0
         };
 
         private static readonly Conversion FootToInch = new Conversion
         {
-            FromUnitId = UnitData.Foot.Id,
-            ToUnitId = UnitData.Inch.Id,
+            FromUnitSymbol = UnitData.Foot.Symbol,
+            ToUnitSymbol = UnitData.Inch.Symbol,
             Multiplier = 12.0
         };
 
         private static readonly Conversion NauticalMileToFoot = new Conversion
         {
-            FromUnitId = UnitData.NauticalMile.Id,
-            ToUnitId = UnitData.Foot.Id,
+            FromUnitSymbol = UnitData.NauticalMile.Symbol,
+            ToUnitSymbol = UnitData.Foot.Symbol,
             Multiplier = 6076.12
         };
 

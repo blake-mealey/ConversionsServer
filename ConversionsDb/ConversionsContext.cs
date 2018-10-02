@@ -1,4 +1,4 @@
-﻿using ConversionsDb.Models.Units;
+﻿using ConversionsDb.Models.Conversions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
