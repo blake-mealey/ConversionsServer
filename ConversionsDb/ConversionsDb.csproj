@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20181005051756_SeedData.cs" />
+    <Compile Remove="Migrations\20181005052156_SeedData.cs" />
+    <Compile Remove="Migrations\20181005052654_SeedData.cs" />
+    <Compile Remove="Migrations\20181005053352_SeedData.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="appsettings.Development.json" />
     <None Remove="appsettings.json" />
   </ItemGroup>

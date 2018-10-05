@@ -23,7 +23,18 @@ namespace ConversionsDb.Models.Conversions
         public void Configure(EntityTypeBuilder<Unit> builder)
         {
             builder.HasData(UnitData.AreaUnits.ToArray());
+            builder.HasData(UnitData.DigitalStorageUnits.ToArray());
             builder.HasData(UnitData.DistanceUnits.ToArray());
+            builder.HasData(UnitData.EnergyUnits.ToArray());
+            builder.HasData(UnitData.FrequencyUnits.ToArray());
+            builder.HasData(UnitData.FuelEconomyUnits.ToArray());
+            builder.HasData(UnitData.MassUnits.ToArray());
+            builder.HasData(UnitData.PlaneAngleUnits.ToArray());
+            builder.HasData(UnitData.PressureUnits.ToArray());
+            builder.HasData(UnitData.SpeedUnits.ToArray());
+            //            builder.HasData(UnitData.TemperatureUnits.ToArray());
+            builder.HasData(UnitData.TimeUnits.ToArray());
+            builder.HasData(UnitData.VolumeUnits.ToArray());
         }
     }
 }

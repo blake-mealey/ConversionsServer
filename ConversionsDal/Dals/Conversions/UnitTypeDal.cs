@@ -24,6 +24,7 @@ namespace ConversionsDal.Dals.Conversions
             return (from bum in _db.BaseUnitMaps
                     join ut in _db.UnitTypes on bum.UnitTypeId equals ut.Id
                     join bu in _db.Units on bum.BaseUnitSymbol equals bu.Symbol
+                    orderby ut.DisplayName, ut.Id
                     select new UnitTypeEntity(ut, bu,
                         from u in _db.Units
                         join utm in _db.UnitTypeMaps on u.Symbol equals utm.UnitSymbol

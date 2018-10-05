@@ -24,6 +24,7 @@ namespace ConversionsDal.Dals.Conversions
             return (from u in _db.Units
                     join utm in _db.UnitTypeMaps on u.Symbol equals utm.UnitSymbol
                     where utm.UnitTypeId == unitTypeId
+                    orderby u.DisplayName, u.Symbol
                     select new UnitEntity(u)).ToList();
         }
     }

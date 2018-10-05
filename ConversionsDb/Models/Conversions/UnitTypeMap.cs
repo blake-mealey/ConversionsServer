@@ -40,8 +40,19 @@ namespace ConversionsDb.Models.Conversions
                 u.UnitSymbol
             });
 
-            AddMaps(UnitTypeData.Distance, UnitData.DistanceUnits);
             AddMaps(UnitTypeData.Area, UnitData.AreaUnits);
+            AddMaps(UnitTypeData.DigitalStorage, UnitData.DigitalStorageUnits);
+            AddMaps(UnitTypeData.Distance, UnitData.DistanceUnits);
+            AddMaps(UnitTypeData.Energy, UnitData.EnergyUnits);
+            AddMaps(UnitTypeData.Frequency, UnitData.FrequencyUnits);
+            AddMaps(UnitTypeData.FuelEconomy, UnitData.FuelEconomyUnits);
+            AddMaps(UnitTypeData.Mass, UnitData.MassUnits);
+            AddMaps(UnitTypeData.PlaneAngle, UnitData.PlaneAngleUnits);
+            AddMaps(UnitTypeData.Pressure, UnitData.PressureUnits);
+            AddMaps(UnitTypeData.Speed, UnitData.SpeedUnits);
+            //            AddMaps(UnitTypeData.Temperature, UnitData.TemperatureUnits);
+            AddMaps(UnitTypeData.Time, UnitData.TimeUnits);
+            AddMaps(UnitTypeData.Volume, UnitData.VolumeUnits);
         }
 
         private void AddMaps(UnitType type, IEnumerable<Unit> units)

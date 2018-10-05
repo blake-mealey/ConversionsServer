@@ -17,7 +17,7 @@ namespace ConversionsDb
                 .Build();
 
             optionsBuilder
-                //                .UseLazyLoadingProxies()
+                .EnableSensitiveDataLogging()
                 .UseSqlServer(configuration.GetConnectionString("Conversions"));
         }
 

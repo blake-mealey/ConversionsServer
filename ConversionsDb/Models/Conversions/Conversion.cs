@@ -40,7 +40,18 @@ namespace ConversionsDb.Models.Conversions
             });
 
             builder.HasData(ConversionData.AreaConversions.ToArray());
+            builder.HasData(ConversionData.DigitalStorageConversions.ToArray());
             builder.HasData(ConversionData.DistanceConversions.ToArray());
+            builder.HasData(ConversionData.EnergyConversions.ToArray());
+            builder.HasData(ConversionData.FrequencyConversions.ToArray());
+            builder.HasData(ConversionData.FuelEconomyConversions.ToArray());
+            builder.HasData(ConversionData.MassConversions.ToArray());
+            builder.HasData(ConversionData.PlaneAngleConversions.ToArray());
+            builder.HasData(ConversionData.PressureConversions.ToArray());
+            builder.HasData(ConversionData.SpeedConversions.ToArray());
+            //            builder.HasData(ConversionData.TemperatureConversions.ToArray());
+            builder.HasData(ConversionData.TimeConversions.ToArray());
+            builder.HasData(ConversionData.VolumeConversions.ToArray());
         }
     }
 }
