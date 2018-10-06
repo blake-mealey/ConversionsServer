@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore;
+﻿using ConversionsDb;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConversionsApi
 {
@@ -7,6 +9,11 @@ namespace ConversionsApi
     {
         public static void Main(string[] args)
         {
+            using (var context = new ConversionsContext())
+            {
+                context.Database.Migrate();
+            }
+
             CreateWebHostBuilder(args).Build().Run();
         }
 
