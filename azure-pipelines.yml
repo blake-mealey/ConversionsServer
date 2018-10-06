@@ -12,7 +12,6 @@ variables:
 steps:
 - script: dotnet build --configuration $(BuildConfiguration)
   displayName: 'Build solution'
-# TODO: Run DB migrations
 - script: dotnet publish ConversionsApi/ConversionsApi.csproj --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)
   displayName: 'Publish API'
 - task: PublishBuildArtifacts@1
