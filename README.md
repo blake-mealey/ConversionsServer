@@ -17,14 +17,14 @@ The API and database for [conversions-app](https://github.com/blake-mealey/conve
 
 ### Steps
 
-1. Clone the repo
-2. Open the ConversionsServer.sln file in VS
-3. Build the solution
-4. Open the appsettings.json file in the ConversionsApi project and update the [connection string](https://www.connectionstrings.com/sql-server/) for your database
-5. Set the ConversionsApi as the default startup project
-6. Run the program
-7. Open [https://localhost:44300/api](https://localhost:44300/api) in your browser. You should see 'ConversionsApi'
-8. [Setup conversions-app](https://github.com/blake-mealey/conversions-app#setup)
+1. [Setup conversions-app](https://github.com/blake-mealey/conversions-app#setup)
+2. Clone the repo
+3. Open the ConversionsServer.sln file in VS
+4. Build the solution
+5. Open the appsettings.json file in the ConversionsApi project and update the [connection string](https://www.connectionstrings.com/sql-server/) for your database
+6. Set the ConversionsApi as the default startup project
+7. Run the program
+8. Open [https://localhost:44300/api](https://localhost:44300/api) in your browser. You should see 'ConversionsApi'
 
 ## Ubuntu
 
@@ -35,10 +35,10 @@ The API and database for [conversions-app](https://github.com/blake-mealey/conve
 
 ### Steps
 
-1. Clone the repo
-2. Run `dotnet build Conversions.sln -c Debug`
-3. Open the appsettings.json file in the ConversionsApi project and update the [connection string](https://www.connectionstrings.com/sql-server/) for your database
-4. Cd into ConversionsApi/bin/Debug
-5. Run `dotnet ConversionsApi.dll`
-6. Open [https://localhost:5001/api](https://localhost:5001/api) in your browser. You should see 'ConversionsApi'
-7. [Setup conversions-app](https://github.com/blake-mealey/conversions-app#setup)
+1. [Setup conversions-app](https://github.com/blake-mealey/conversions-app#setup)
+2. Clone the repo
+3. Run `dotnet build Conversions.sln -c Debug`
+4. Open the appsettings.json file in the ConversionsApi project and update the [connection string](https://www.connectionstrings.com/sql-server/) for your database
+5. Cd into ConversionsApi/bin/Debug
+6. Run `dotnet ConversionsApi.dll`
+7. Open [https://localhost:5001/api](https://localhost:5001/api) in your browser. You should see 'ConversionsApi'
