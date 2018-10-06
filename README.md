@@ -24,7 +24,7 @@ The API and database for [conversions-app](https://github.com/blake-mealey/conve
 5. Set the ConversionsApi as the default startup project
 6. Run the program
 7. Open [https://localhost:44300/api](https://localhost:44300/api) in your browser. You should see 'ConversionsApi'
-8. Setup [conversions-app](https://github.com/blake-mealey/conversions-app)
+8. [Setup conversions-app](https://github.com/blake-mealey/conversions-app#setup)
 
 ## Ubuntu
 
@@ -41,4 +41,4 @@ The API and database for [conversions-app](https://github.com/blake-mealey/conve
 4. Cd into ConversionsApi/bin/Debug
 5. Run `dotnet ConversionsApi.dll`
 6. Open [https://localhost:5001/api](https://localhost:5001/api) in your browser. You should see 'ConversionsApi'
-7. Setup [conversions-app](https://github.com/blake-mealey/conversions-app)
+7. [Setup conversions-app](https://github.com/blake-mealey/conversions-app#setup)
