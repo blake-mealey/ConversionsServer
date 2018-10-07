@@ -1,6 +1,6 @@
-﻿using ConversionsDb.Models.Conversions;
+﻿using Chimerical.Conversions.Db.Models.Conversions;
 
-namespace ConversionsDal.Entities.Conversions
+namespace Chimerical.Conversions.Dal.Entities.Conversions
 {
     public class ConversionEntity
     {

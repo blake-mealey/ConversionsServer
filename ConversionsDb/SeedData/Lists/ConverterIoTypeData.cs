@@ -1,7 +1,7 @@
-﻿using ConversionsDb.Models.Lists;
+﻿using Chimerical.Conversions.Db.Models.Lists;
 using System.Collections.Generic;
 
-namespace ConversionsDb.SeedData.Lists
+namespace Chimerical.Conversions.Db.SeedData.Lists
 {
     public static class ConverterIoTypeData
     {

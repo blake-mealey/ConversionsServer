@@ -1,10 +1,9 @@
-﻿using ConversionsDal.Entities.Lists;
-using ConversionsDb;
+﻿using Chimerical.Conversions.Dal.Entities.Lists;
+using Chimerical.Conversions.Db;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace ConversionsDal.Dals.Lists
+namespace Chimerical.Conversions.Dal.Dals.Lists
 {
     public interface IConverterListDal
     {

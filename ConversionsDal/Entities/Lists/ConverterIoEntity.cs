@@ -1,8 +1,8 @@
-﻿using ConversionsDal.Entities.Conversions;
-using ConversionsDb.Models.Lists;
+﻿using Chimerical.Conversions.Dal.Entities.Conversions;
+using Chimerical.Conversions.Db.Models.Lists;
 using System;
 
-namespace ConversionsDal.Entities.Lists
+namespace Chimerical.Conversions.Dal.Entities.Lists
 {
     public enum ConverterIoTypeEnum
     {

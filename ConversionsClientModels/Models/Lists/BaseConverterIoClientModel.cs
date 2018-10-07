@@ -1,4 +1,4 @@
-﻿namespace ConversionsClientModels.Models.Lists
+﻿namespace Chimerical.Conversions.ClientModels.Models.Lists
 {
     public class BaseConverterIoClientModel
     {

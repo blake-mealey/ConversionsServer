@@ -1,10 +1,10 @@
-﻿using ConversionsDb.SeedData.Conversions;
+﻿using Chimerical.Conversions.Db.SeedData.Conversions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ConversionsDb.Models.Conversions
+namespace Chimerical.Conversions.Db.Models.Conversions
 {
     [Table("UnitType", Schema = "Conversions")]
     public class UnitType

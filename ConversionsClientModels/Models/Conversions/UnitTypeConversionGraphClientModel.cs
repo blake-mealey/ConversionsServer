@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Serialization;
 using System.Collections.Generic;
 
-namespace ConversionsClientModels.Models.Conversions
+namespace Chimerical.Conversions.ClientModels.Models.Conversions
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class UnitTypeConversionGraphClientModel

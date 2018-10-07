@@ -1,10 +1,10 @@
-﻿using ConversionsApi.Converters.Conversions;
-using ConversionsClientModels.Models.Conversions;
-using ConversionsDal.Dals.Conversions;
-using ConversionsDal.Entities.Conversions;
+﻿using Chimerical.Conversions.Api.Converters.Conversions;
+using Chimerical.Conversions.ClientModels.Models.Conversions;
+using Chimerical.Conversions.Dal.Dals.Conversions;
+using Chimerical.Conversions.Dal.Entities.Conversions;
 using System.Collections.Generic;
 
-namespace ConversionsApi.Services
+namespace Chimerical.Conversions.Api.Services
 {
     public interface IConversionsService
     {

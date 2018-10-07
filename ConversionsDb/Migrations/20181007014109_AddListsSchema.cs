@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
-namespace ConversionsDb.Migrations
+namespace Chimerical.Conversions.Db.Migrations
 {
     public partial class AddListsSchema : Migration
     {

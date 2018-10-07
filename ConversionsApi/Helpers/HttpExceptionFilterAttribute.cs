@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ConversionsApi.Helpers
+namespace Chimerical.Conversions.Api.Helpers
 {
     public class HttpExceptionFilterAttribute : ExceptionFilterAttribute
     {

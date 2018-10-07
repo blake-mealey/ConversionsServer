@@ -1,9 +1,9 @@
-﻿using ConversionsClientModels.Models.Lists;
-using ConversionsDal.Entities.Lists;
+﻿using Chimerical.Conversions.ClientModels.Models.Lists;
+using Chimerical.Conversions.Dal.Entities.Lists;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConversionsApi.Converters.Lists
+namespace Chimerical.Conversions.Api.Converters.Lists
 {
     public static class ConverterIoClientModelConverter
     {

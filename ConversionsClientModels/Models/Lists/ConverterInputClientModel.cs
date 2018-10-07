@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace ConversionsClientModels.Models.Lists
+namespace Chimerical.Conversions.ClientModels.Models.Lists
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class ConverterInputClientModel : BaseConverterIoClientModel

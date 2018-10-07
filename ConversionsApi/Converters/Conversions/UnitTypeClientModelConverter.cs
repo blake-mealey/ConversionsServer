@@ -1,9 +1,9 @@
-﻿using ConversionsClientModels.Models.Conversions;
-using ConversionsDal.Entities.Conversions;
+﻿using Chimerical.Conversions.ClientModels.Models.Conversions;
+using Chimerical.Conversions.Dal.Entities.Conversions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConversionsApi.Converters.Conversions
+namespace Chimerical.Conversions.Api.Converters.Conversions
 {
     public static class UnitTypeClientModelConverter
     {

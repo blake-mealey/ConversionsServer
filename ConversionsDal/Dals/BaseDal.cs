@@ -1,4 +1,4 @@
-﻿namespace ConversionsDal.Dals
+﻿namespace Chimerical.Conversions.Dal.Dals
 {
     public class BaseDal
     {

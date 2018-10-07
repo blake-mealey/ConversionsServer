@@ -1,9 +1,9 @@
-﻿using ConversionsApi.Services;
-using ConversionsClientModels.Models.Conversions;
+﻿using Chimerical.Conversions.Api.Services;
+using Chimerical.Conversions.ClientModels.Models.Conversions;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace ConversionsApi.Controllers
+namespace Chimerical.Conversions.Api.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]

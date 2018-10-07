@@ -1,7 +1,7 @@
-﻿using ConversionsApi.Services;
-using ConversionsDal.Dals.Conversions;
-using ConversionsDal.Dals.Lists;
-using ConversionsDb;
+﻿using Chimerical.Conversions.Api.Services;
+using Chimerical.Conversions.Dal.Dals.Conversions;
+using Chimerical.Conversions.Dal.Dals.Lists;
+using Chimerical.Conversions.Db;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,7 +14,7 @@ using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using SimpleInjector.Lifestyles;
 
-namespace ConversionsApi
+namespace Chimerical.Conversions.Api
 {
     public class Startup
     {

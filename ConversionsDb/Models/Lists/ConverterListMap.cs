@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ConversionsDb.Models.Lists
+namespace Chimerical.Conversions.Db.Models.Lists
 {
     [Table("ConverterListMap", Schema = "Lists")]
     public class ConverterListMap

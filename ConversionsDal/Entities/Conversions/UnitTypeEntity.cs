@@ -1,8 +1,8 @@
-﻿using ConversionsDb.Models.Conversions;
+﻿using Chimerical.Conversions.Db.Models.Conversions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConversionsDal.Entities.Conversions
+namespace Chimerical.Conversions.Dal.Entities.Conversions
 {
     public class UnitTypeEntity
     {

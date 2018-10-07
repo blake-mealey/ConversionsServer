@@ -1,9 +1,9 @@
-﻿using ConversionsApi.Converters.Lists;
-using ConversionsClientModels.Models.Lists;
-using ConversionsDal.Dals.Lists;
+﻿using Chimerical.Conversions.Api.Converters.Lists;
+using Chimerical.Conversions.ClientModels.Models.Lists;
+using Chimerical.Conversions.Dal.Dals.Lists;
 using System;
 
-namespace ConversionsApi.Services
+namespace Chimerical.Conversions.Api.Services
 {
     public interface IListsService
     {

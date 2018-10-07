@@ -1,9 +1,9 @@
-﻿using ConversionsDb;
+﻿using Chimerical.Conversions.Db;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
-namespace ConversionsApi
+namespace Chimerical.Conversions.Api
 {
     public class Program
     {

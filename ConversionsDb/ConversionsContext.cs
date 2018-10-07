@@ -1,10 +1,10 @@
-﻿using ConversionsDb.Models.Conversions;
-using ConversionsDb.Models.Lists;
+﻿using Chimerical.Conversions.Db.Models.Conversions;
+using Chimerical.Conversions.Db.Models.Lists;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace ConversionsDb
+namespace Chimerical.Conversions.Db
 {
     public class ConversionsContext : DbContext
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ConversionsApi.Controllers
+namespace Chimerical.Conversions.Api.Controllers
 {
     [Route("api")]
     [ApiController]

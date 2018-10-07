@@ -1,10 +1,10 @@
-﻿using ConversionsDb.SeedData.Lists;
+﻿using Chimerical.Conversions.Db.SeedData.Lists;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ConversionsDb.Models.Lists
+namespace Chimerical.Conversions.Db.Models.Lists
 {
     [Table("ConverterIoType", Schema = "Lists")]
     public class ConverterIoType

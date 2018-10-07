@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConversionsApi.Converters
+namespace Chimerical.Conversions.Api.Converters
 {
     public static class GuidConverter
     {

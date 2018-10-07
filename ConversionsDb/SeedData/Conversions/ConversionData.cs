@@ -1,8 +1,8 @@
-﻿using ConversionsDb.Models.Conversions;
+﻿using Chimerical.Conversions.Db.Models.Conversions;
 using System;
 using System.Collections.Generic;
 
-namespace ConversionsDb.SeedData.Conversions
+namespace Chimerical.Conversions.Db.SeedData.Conversions
 {
     public static class ConversionData
     {

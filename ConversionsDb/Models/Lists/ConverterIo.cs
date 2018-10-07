@@ -1,9 +1,9 @@
-﻿using ConversionsDb.Models.Conversions;
+﻿using Chimerical.Conversions.Db.Models.Conversions;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ConversionsDb.Models.Lists
+namespace Chimerical.Conversions.Db.Models.Lists
 {
     [Table("ConverterIo", Schema = "Lists")]
     public class ConverterIo

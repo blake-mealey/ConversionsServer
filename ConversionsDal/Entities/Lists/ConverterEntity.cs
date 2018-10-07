@@ -1,9 +1,9 @@
-﻿using ConversionsDb.Models.Lists;
+﻿using Chimerical.Conversions.Db.Models.Lists;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConversionsDal.Entities.Lists
+namespace Chimerical.Conversions.Dal.Entities.Lists
 {
     public class ConverterEntity
     {

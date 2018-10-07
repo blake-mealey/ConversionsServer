@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConversionsDal
+namespace Chimerical.Conversions.Dal
 {
     public class DataNotFoundException : Exception
     {
