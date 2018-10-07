@@ -1,7 +1,7 @@
 ﻿using ConversionsDb.Models.Conversions;
 using System.Collections.Generic;
 
-namespace ConversionsDb.SeedData
+namespace ConversionsDb.SeedData.Conversions
 {
     public static class UnitTypeData
     {

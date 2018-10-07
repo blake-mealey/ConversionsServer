@@ -1,5 +1,6 @@
 ﻿using ConversionsApi.Services;
 using ConversionsDal.Dals.Conversions;
+using ConversionsDal.Dals.Lists;
 using ConversionsDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -84,10 +85,13 @@ namespace ConversionsApi
             _container.Register<IUnitDal, UnitDal>();
             _container.Register<IUnitTypeDal, UnitTypeDal>();
             _container.Register<IConversionDal, ConversionDal>();
+
+            _container.Register<IConverterListDal, ConverterListDal>();
             #endregion
 
             #region Services
             _container.Register<IConversionsService, ConversionsService>();
+            _container.Register<IListsService, ListsService>();
             #endregion
 
             _container.AutoCrossWireAspNetComponents(app);

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ConversionsDb.SeedData
+namespace ConversionsDb.SeedData.Conversions
 {
     public static class ConversionData
     {

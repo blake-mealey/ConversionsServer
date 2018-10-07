@@ -1,4 +1,4 @@
-﻿using ConversionsDb.SeedData;
+﻿using ConversionsDb.SeedData.Conversions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Collections.Generic;

@@ -12,6 +12,9 @@
     <Compile Remove="Migrations\20181005052156_SeedData.cs" />
     <Compile Remove="Migrations\20181005052654_SeedData.cs" />
     <Compile Remove="Migrations\20181005053352_SeedData.cs" />
+    <Compile Remove="Migrations\20181007013028_AddLists.cs" />
+    <Compile Remove="Migrations\20181007013412_AddLists.cs" />
+    <Compile Remove="Migrations\20181007013438_AddListsSchema.cs" />
   </ItemGroup>
 
   <ItemGroup>
