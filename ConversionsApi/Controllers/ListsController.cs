@@ -1,4 +1,5 @@
 ﻿using Chimerical.Conversions.Api.Converters;
+using Chimerical.Conversions.Api.Helpers;
 using Chimerical.Conversions.Api.Services;
 using Chimerical.Conversions.ClientModels.Models.Lists;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Chimerical.Conversions.Api.Controllers
 {
     [Route("api/[Controller]")]
+    [ExceptionFilters]
     [ApiController]
     public class ListsController : ControllerBase
     {
