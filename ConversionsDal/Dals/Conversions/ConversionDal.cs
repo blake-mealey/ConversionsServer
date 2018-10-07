@@ -22,15 +22,14 @@ namespace Chimerical.Conversions.Dal.Dals.Conversions
 
         public List<ConversionEntity> GetConversions(int unitTypeId)
         {
-            var result = (from c in _db.Conversions
-                          join utm in _db.UnitTypeMaps on c.FromUnit.Symbol equals utm.Unit.Symbol
-                          join utm2 in _db.UnitTypeMaps on c.ToUnit.Symbol equals utm2.Unit.Symbol
-                          where utm.UnitType.Id == unitTypeId && utm2.UnitType.Id == unitTypeId
-                          select c)
-                .Include(rv => rv.FromUnit)
-                .Include(rv => rv.ToUnit);
-
-            return result.Select(conversion => new ConversionEntity(conversion)).ToList();
+            return (from c in _db.Conversions
+                    join utm in _db.UnitTypeMaps on c.FromUnit.Symbol equals utm.Unit.Symbol
+                    join utm2 in _db.UnitTypeMaps on c.ToUnit.Symbol equals utm2.Unit.Symbol
+                    where utm.UnitType.Id == unitTypeId && utm2.UnitType.Id == unitTypeId
+                    select c)
+                .Include(c => c.FromUnit)
+                .Include(c => c.ToUnit)
+                .Select(c => new ConversionEntity(c)).ToList();
         }
     }
 }

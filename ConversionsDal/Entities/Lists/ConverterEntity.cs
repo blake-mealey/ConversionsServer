@@ -15,6 +15,10 @@ namespace Chimerical.Conversions.Dal.Entities.Lists
             Outputs = outputs.Select(o => new ConverterIoEntity(o)).ToList();
         }
 
+        public ConverterEntity()
+        {
+        }
+
         public Guid Id;
 
         public int UnitTypeId;

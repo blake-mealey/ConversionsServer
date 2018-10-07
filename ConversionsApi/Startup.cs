@@ -87,6 +87,8 @@ namespace Chimerical.Conversions.Api
             _container.Register<IConversionDal, ConversionDal>();
 
             _container.Register<IConverterListDal, ConverterListDal>();
+            _container.Register<IConverterDal, ConverterDal>();
+            _container.Register<IConverterIoDal, ConverterIoDal>();
             #endregion
 
             #region Services

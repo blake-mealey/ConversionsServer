@@ -20,6 +20,10 @@ namespace Chimerical.Conversions.Dal.Entities.Lists
             Unit = new UnitEntity(io.Unit);
         }
 
+        public ConverterIoEntity()
+        {
+        }
+
         public Guid Id;
 
         public ConverterIoTypeEnum Type;

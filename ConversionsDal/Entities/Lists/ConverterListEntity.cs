@@ -7,11 +7,15 @@ namespace Chimerical.Conversions.Dal.Entities.Lists
 {
     public class ConverterListEntity
     {
-        public ConverterListEntity(ConverterList converterList, IEnumerable<ConverterEntity> convereters)
+        public ConverterListEntity(ConverterList converterList, IEnumerable<ConverterEntity> converters)
         {
             Id = converterList.Id;
             DisplayName = converterList.DisplayName;
-            Converters = convereters.ToList();
+            Converters = converters.ToList();
+        }
+
+        public ConverterListEntity()
+        {
         }
 
         public Guid Id;
