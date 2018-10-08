@@ -16,6 +16,7 @@ namespace Chimerical.Conversions.Api.Converters.Conversions
         {
             return new UnitTypeClientModel
             {
+                Id = entity.Id,
                 DisplayName = entity.DisplayName,
                 BaseUnit = entity.BaseUnit.ToClientModel(),
                 Units = entity.Units.ToClientModels()

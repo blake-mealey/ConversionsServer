@@ -7,6 +7,8 @@ namespace Chimerical.Conversions.ClientModels.Models.Conversions
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class UnitTypeClientModel
     {
+        public int Id;
+
         public string DisplayName;
 
         public UnitClientModel BaseUnit;
