@@ -35,6 +35,7 @@ namespace Chimerical.Conversions.Db.Models.Conversions
             //            builder.HasData(UnitData.TemperatureUnits.ToArray());
             builder.HasData(UnitData.TimeUnits.ToArray());
             builder.HasData(UnitData.VolumeUnits.ToArray());
+            builder.HasData(UnitData.AstronomicalUnits.ToArray());
         }
     }
 }

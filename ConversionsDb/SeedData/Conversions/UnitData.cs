@@ -915,5 +915,40 @@ namespace Chimerical.Conversions.Db.SeedData.Conversions
             CubicInch
         };
         #endregion
+
+        #region Astronomical Units
+
+        public static readonly Unit Parsec = new Unit
+        {
+            Symbol = "pc",
+            DisplayName = "Parsec"
+        };
+
+        /// <summary>
+        /// Distance runned by light on a year time 
+        /// </summary>
+        public static readonly Unit LightYear = new Unit
+        {
+            Symbol = "ly",
+            DisplayName = "LightYear"
+        };
+
+        /// <summary>
+        /// Distance from Earth to Sun
+        /// </summary>
+        public static readonly Unit AstronomicalUnit = new Unit
+        {
+            Symbol = "au",
+            DisplayName = "AstronomicalUnit"
+        };
+
+        public static readonly List<Unit> AstronomicalUnits = new List<Unit>
+        {
+            Parsec,
+            LightYear,
+            AstronomicalUnit
+        };
+
+        #endregion
     }
 }
