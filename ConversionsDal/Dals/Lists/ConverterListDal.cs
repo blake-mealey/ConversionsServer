@@ -49,8 +49,7 @@ namespace Chimerical.Conversions.Dal.Dals.Lists
                                                            where clm.ConverterListId == cl.Id
                                                            select new ConverterEntity(c,
                                                                (from ci in _db.ConverterIos
-                                                                where ci.ConverterId == c.Id &&
-                                       ci.ConverterIoTypeId == (int)ConverterIoTypeEnum.Input
+                                                                where ci.ConverterId == c.Id && ci.ConverterIoTypeId == (int)ConverterIoTypeEnum.Input
                                                                 select new ConverterIo
                                                                 {
                                                                     Id = ci.Id,
@@ -66,7 +65,7 @@ namespace Chimerical.Conversions.Dal.Dals.Lists
                                                                    ConverterIoTypeId = co.ConverterIoTypeId,
                                                                    Value = co.Value,
                                                                    Unit = co.Unit
-                                                               }))).OrderBy(cl => cl.Id)
+                                                               }))).OrderBy(cl => cl.DisplayName).ThenBy(cl => cl.Id)
                     .Skip(pageIndex * pageLength)
                     .Take(pageLength);
             }
