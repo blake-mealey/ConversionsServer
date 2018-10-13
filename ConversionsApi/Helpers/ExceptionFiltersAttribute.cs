@@ -25,6 +25,8 @@ namespace Chimerical.Conversions.Api.Helpers
                     break;
             }
 
+            Console.WriteLine(exception.StackTrace);
+
             context.Result = new JsonResult(new ErrorClientModel
             {
                 Message = exception.GetBaseException().Message
