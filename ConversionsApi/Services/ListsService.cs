@@ -8,7 +8,7 @@ namespace Chimerical.Conversions.Api.Services
 {
     public interface IListsService
     {
-        List<ConverterListClientModel> GetConverterListsPage(int pageIndex, int pageLength);
+        List<SimpleConverterListClientModel> GetConverterListsPage(int pageIndex, int pageLength);
 
         ConverterListClientModel GetConverterList(Guid listId);
 
@@ -28,9 +28,9 @@ namespace Chimerical.Conversions.Api.Services
             _converterDal = converterDal;
         }
 
-        public List<ConverterListClientModel> GetConverterListsPage(int pageIndex, int pageLength)
+        public List<SimpleConverterListClientModel> GetConverterListsPage(int pageIndex, int pageLength)
         {
-            return _converterListDal.GetConverterListsPage(pageIndex, pageLength).ToClientModels();
+            return _converterListDal.GetConverterListsPage(pageIndex, pageLength).ToSimpleClientModels();
         }
 
         public ConverterListClientModel GetConverterList(Guid listId)

@@ -7,11 +7,6 @@ namespace Chimerical.Conversions.Api.Converters.Lists
 {
     public static class ConverterIoClientModelConverter
     {
-        public static List<ConverterInputClientModel> ToInputClientModels(this IEnumerable<ConverterIoEntity> entities)
-        {
-            return entities.Select(ToInputClientModel).ToList();
-        }
-
         public static ConverterInputClientModel ToInputClientModel(this ConverterIoEntity entity)
         {
             return new ConverterInputClientModel
@@ -21,9 +16,9 @@ namespace Chimerical.Conversions.Api.Converters.Lists
             };
         }
 
-        public static List<ConverterOutputClientModel> ToOutputClientModels(this IEnumerable<ConverterIoEntity> entities)
+        public static List<ConverterInputClientModel> ToInputClientModels(this IEnumerable<ConverterIoEntity> entities)
         {
-            return entities.Select(ToOutputClientModel).ToList();
+            return entities.Select(ToInputClientModel).ToList();
         }
 
         public static ConverterOutputClientModel ToOutputClientModel(this ConverterIoEntity entity)
@@ -33,6 +28,11 @@ namespace Chimerical.Conversions.Api.Converters.Lists
                 Id = GuidConverter.EncodeGuid(entity.Id),
                 UnitSymbol = entity.Unit.Symbol
             };
+        }
+
+        public static List<ConverterOutputClientModel> ToOutputClientModels(this IEnumerable<ConverterIoEntity> entities)
+        {
+            return entities.Select(ToOutputClientModel).ToList();
         }
     }
 }

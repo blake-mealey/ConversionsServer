@@ -21,7 +21,7 @@ namespace Chimerical.Conversions.Api.Controllers
 
         [HttpGet]
         [Route("")]
-        public ActionResult<List<ConverterListClientModel>> GetConverterListsPage(int pageIndex, int pageLength)
+        public ActionResult<List<SimpleConverterListClientModel>> GetConverterListsPage(int pageIndex, int pageLength)
         {
             return _listsService.GetConverterListsPage(pageIndex, pageLength);
         }

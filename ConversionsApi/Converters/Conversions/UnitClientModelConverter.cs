@@ -7,11 +7,6 @@ namespace Chimerical.Conversions.Api.Converters.Conversions
 {
     public static class UnitClientModelConverter
     {
-        public static List<UnitClientModel> ToClientModels(this IEnumerable<UnitEntity> entities)
-        {
-            return entities.Select(ToClientModel).ToList();
-        }
-
         public static UnitClientModel ToClientModel(this UnitEntity entity)
         {
             return new UnitClientModel
@@ -19,6 +14,11 @@ namespace Chimerical.Conversions.Api.Converters.Conversions
                 Symbol = entity.Symbol,
                 DisplayName = entity.DisplayName
             };
+        }
+
+        public static List<UnitClientModel> ToClientModels(this IEnumerable<UnitEntity> entities)
+        {
+            return entities.Select(ToClientModel).ToList();
         }
     }
 }
