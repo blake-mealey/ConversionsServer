@@ -1,7 +1,10 @@
-﻿using Chimerical.Conversions.Db;
+﻿using System;
+using Chimerical.Conversions.Db;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using NLog.Web;
 
 namespace Chimerical.Conversions.Api
 {
@@ -9,16 +12,38 @@ namespace Chimerical.Conversions.Api
     {
         public static void Main(string[] args)
         {
-            using (var context = new ConversionsContext())
+            var logger = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
+            try
             {
-                context.Database.Migrate();
+                logger.Debug("Run DB migrations");
+                using (var context = new ConversionsContext())
+                {
+                    context.Database.Migrate();
+                }
+
+                logger.Debug("Initialize server");
+                GetWebHostBuilder(args).Build().Run();
+            }
+            catch (Exception e)
+            {
+                logger.Error(e, "Stopped program because of exception");
+                throw;
+            }
+            finally
+            {
+                NLog.LogManager.Shutdown();
             }
 
-            CreateWebHostBuilder(args).Build().Run();
+            
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        private static IWebHostBuilder GetWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .ConfigureLogging(logging =>
+                {
+                    logging.SetMinimumLevel(LogLevel.Trace);
+                })
+                .UseNLog();
     }
 }

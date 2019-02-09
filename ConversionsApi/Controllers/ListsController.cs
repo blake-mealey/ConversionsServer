@@ -14,7 +14,7 @@ namespace Chimerical.Conversions.Api.Controllers
     public class ListsController : ControllerBase
     {
         private readonly IListsService _listsService;
-        private readonly ILogger _logger;
+        private readonly ILogger<ListsController> _logger;
 
         public ListsController(IListsService listsService, ILogger<ListsController> logger)
         {
