@@ -1,8 +1,10 @@
-# Conversions Server
+# Chimerical Conversions: Server Component
 
 [![Build Status](https://dev.azure.com/chimerical/Conversions/_apis/build/status/ConversionsServer)](https://dev.azure.com/chimerical/Conversions/_build/latest?definitionId=2)
 
-The API and database for [conversions-app](https://github.com/blake-mealey/conversions-app). Hosted on [conversions-api.chimerical.ca](https://conversions-api.chimerical.ca/api).
+An API for converting things: [conversions-api.chimerical.ca](https://conversions-api.chimerical.ca/api).
+
+View the app component: [Chimerical Conversions: App Component](https://github.com/blake-mealey/conversions-app).
 
 # Setup
 
@@ -42,3 +44,7 @@ The API and database for [conversions-app](https://github.com/blake-mealey/conve
 5. Cd into ConversionsApi/bin/Debug
 6. Run `dotnet ConversionsApi.dll`
 7. Open [https://localhost:5001/api](https://localhost:5001/api) in your browser. You should see 'ConversionsApi'
+
+# Development plan
+
+View the [Trello board](https://trello.com/b/GXpwj1fU/conversions-tasks) containing the development plan.
