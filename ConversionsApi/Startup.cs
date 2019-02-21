@@ -67,7 +67,10 @@ namespace Chimerical.Conversions.Api
                 app.UseHsts();
             }
 
-            app.UseCors(builder => builder.AllowAnyHeader().WithOrigins(Configuration["AllowedHosts"]));
+            app.UseCors(builder => builder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithOrigins(Configuration["AllowedHosts"]));
 
             //            app.UseHttpsRedirection();
             app.UseForwardedHeaders(new ForwardedHeadersOptions
