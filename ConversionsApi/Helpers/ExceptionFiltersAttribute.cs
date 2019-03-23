@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Net;
+using System.Security.Authentication;
 
 namespace Chimerical.Conversions.Api.Helpers
 {
@@ -23,6 +24,9 @@ namespace Chimerical.Conversions.Api.Helpers
                 case FormatException _:
                     statusCode = HttpStatusCode.BadRequest;
                     break;
+                case AuthenticationException _:
+                    statusCode = HttpStatusCode.Unauthorized;
+                    break;
             }
 
             Console.WriteLine(exception.StackTrace);
@@ -31,7 +35,9 @@ namespace Chimerical.Conversions.Api.Helpers
             {
                 Message = exception.GetBaseException().Message
             })
-            { StatusCode = (int)statusCode };
+            {
+                StatusCode = (int)statusCode
+            };
         }
     }
 }

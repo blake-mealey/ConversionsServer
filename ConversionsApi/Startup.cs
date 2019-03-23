@@ -33,7 +33,9 @@ namespace Chimerical.Conversions.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddEntityFrameworkSqlServer().AddDbContext<ConversionsContext>();
 
@@ -97,6 +99,8 @@ namespace Chimerical.Conversions.Api
             #region Services
             _container.Register<IConversionsService, ConversionsService>();
             _container.Register<IListsService, ListsService>();
+
+            _container.Register<IAuthService, AuthService>();
             #endregion
 
             _container.AutoCrossWireAspNetComponents(app);
