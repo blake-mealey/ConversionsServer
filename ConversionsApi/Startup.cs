@@ -1,4 +1,5 @@
 ﻿using Chimerical.Conversions.Api.Services;
+using Chimerical.Conversions.Dal.Dals.Auth;
 using Chimerical.Conversions.Dal.Dals.Conversions;
 using Chimerical.Conversions.Dal.Dals.Lists;
 using Chimerical.Conversions.Db;
@@ -87,6 +88,8 @@ namespace Chimerical.Conversions.Api
             _container.RegisterMvcControllers(app);
 
             #region DALs
+            _container.Register<IIdentityProviderDal, IdentityProviderDal>();
+
             _container.Register<IUnitDal, UnitDal>();
             _container.Register<IUnitTypeDal, UnitTypeDal>();
             _container.Register<IConversionDal, ConversionDal>();
