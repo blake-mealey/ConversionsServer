@@ -26,16 +26,20 @@ namespace Chimerical.Conversions.Db.Migrations
                         .HasMaxLength(2000);
 
                     b.Property<string>("ClientSecret")
+                        .IsRequired()
                         .HasMaxLength(2000);
 
                     b.Property<string>("DiscoveryUrl")
+                        .IsRequired()
                         .HasMaxLength(2000);
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(64);
 
                     b.Property<string>("IconUrl")
+                        .IsRequired()
                         .HasMaxLength(2000);
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(64);
 
                     b.HasKey("ClientId");
 

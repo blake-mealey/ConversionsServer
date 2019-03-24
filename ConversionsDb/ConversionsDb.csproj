@@ -19,6 +19,7 @@
     <Compile Remove="Migrations\20190324033446_AddIdentityProviderTable.cs" />
     <Compile Remove="Migrations\20190324033733_AddIdentityProviderTable.cs" />
     <Compile Remove="Migrations\20190324034151_AddIdentityProviderTable.cs" />
+    <Compile Remove="Migrations\20190324034344_AddIdentityProviderTable.cs" />
   </ItemGroup>
 
   <ItemGroup>
