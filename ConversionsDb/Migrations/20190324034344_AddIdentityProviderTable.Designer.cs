@@ -4,14 +4,16 @@ using Chimerical.Conversions.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Chimerical.Conversions.Db.Migrations
 {
     [DbContext(typeof(ConversionsContext))]
-    partial class ConversionsContextModelSnapshot : ModelSnapshot
+    [Migration("20190324034344_AddIdentityProviderTable")]
+    partial class AddIdentityProviderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

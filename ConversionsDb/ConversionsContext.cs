@@ -3,6 +3,7 @@ using Chimerical.Conversions.Db.Models.Lists;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using Chimerical.Conversions.Db.Models.Auth;
 
 namespace Chimerical.Conversions.Db
 {
@@ -37,6 +38,10 @@ namespace Chimerical.Conversions.Db
             modelBuilder.ApplyConfiguration(new ConverterIoTypeConfiguration());
             #endregion
         }
+
+        #region Auth
+        public DbSet<IdentityProvider> IdentityProviders { get; set; }
+        #endregion
 
         #region Units
         public DbSet<Unit> Units { get; set; }

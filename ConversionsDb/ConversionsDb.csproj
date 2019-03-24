@@ -16,6 +16,9 @@
     <Compile Remove="Migrations\20181007013028_AddLists.cs" />
     <Compile Remove="Migrations\20181007013412_AddLists.cs" />
     <Compile Remove="Migrations\20181007013438_AddListsSchema.cs" />
+    <Compile Remove="Migrations\20190324033446_AddIdentityProviderTable.cs" />
+    <Compile Remove="Migrations\20190324033733_AddIdentityProviderTable.cs" />
+    <Compile Remove="Migrations\20190324034151_AddIdentityProviderTable.cs" />
   </ItemGroup>
 
   <ItemGroup>
