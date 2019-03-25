@@ -30,7 +30,7 @@ namespace Chimerical.Conversions.Api.Services
 
         private readonly Dictionary<string, Data<T>> _dataDictionary;
 
-        public TimeSpan LifeTime { get; }
+        public readonly TimeSpan LifeTime;
 
         public TimeExpiryDataCacheService(TimeSpan lifeTime)
         {
@@ -40,24 +40,20 @@ namespace Chimerical.Conversions.Api.Services
 
         public T GetData(string key, Func<T> getter)
         {
-            var data = _dataDictionary[key];
-            if (data == null || data.IsExpired)
+            if (!_dataDictionary.TryGetValue(key, out var data) || data.IsExpired)
             {
-                _dataDictionary[key] = new Data<T>(LifeTime, getter());
+                data = _dataDictionary[key] = new Data<T>(LifeTime, getter());
             }
-
-            return data != null ? data.Value : default(T);
+            return data.Value;
         }
 
         public async Task<T> GetDataAsync(string key, Func<Task<T>> asyncGetter)
         {
-            var data = _dataDictionary[key];
-            if (data == null || data.IsExpired)
+            if (!_dataDictionary.TryGetValue(key, out var data) || data.IsExpired)
             {
-                _dataDictionary[key] = new Data<T>(LifeTime, await asyncGetter());
+                data = _dataDictionary[key] = new Data<T>(LifeTime, await asyncGetter());
             }
-
-            return data != null ? data.Value : default(T);
+            return data.Value;
         }
     }
 }

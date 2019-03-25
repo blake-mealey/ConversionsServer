@@ -5,6 +5,7 @@ using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 using Chimerical.Conversions.Api.Helpers;
+using Chimerical.Conversions.Dal.Dals.Auth;
 using Microsoft.Extensions.Configuration;
 
 namespace Chimerical.Conversions.Api.Services
@@ -19,28 +20,37 @@ namespace Chimerical.Conversions.Api.Services
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public AuthService(HttpClient httpClient, IConfiguration configuration)
+        private readonly IIdentityProviderDal _identityProviderDal;
+        private readonly IIdentityProviderDiscoveryService _identityProviderDiscoveryService;
+
+        public AuthService(HttpClient httpClient, IConfiguration configuration,
+            IIdentityProviderDal identityProviderDal,
+            IIdentityProviderDiscoveryService identityProviderDiscoveryService)
         {
             _httpClient = httpClient;
             _configuration = configuration;
+            _identityProviderDal = identityProviderDal;
+            _identityProviderDiscoveryService = identityProviderDiscoveryService;
         }
 
         public async Task<UserAuthModel> ExchangeCodeForToken(AuthParameters authParameters)
         {
+            var identityProvider = await _identityProviderDal.GetIdentityProvider(authParameters.ClientId);
+            var discoveryDocument = await _identityProviderDiscoveryService.GetDiscoveryDocument(identityProvider);
+
             var authCode = new AuthCodeModel
             {
                 Code = authParameters.Code,
                 ClientId = authParameters.ClientId,
-                ClientSecret = _configuration["GoogleOpenIdConnectClientSecret"],
+                ClientSecret = identityProvider.ClientSecret,
                 RedirectUri = authParameters.RedirectUri,
                 GrantType = GrantType.AuthorizationCode
             };
 
             var data = new StringContent(JsonConvert.SerializeObject(authCode), Encoding.UTF8, "application/json");
-            var request = await _httpClient.PostAsync($"https://oauth2.googleapis.com/token",
-                data);
+            var response = await _httpClient.PostAsync(discoveryDocument.TokenEndpoint, data);
 
-            var content = await request.Content.ReadAsStringAsync();
+            var content = await response.Content.ReadAsStringAsync();
             var authToken = JsonConvert.DeserializeObject<AuthTokenModel>(content);
 
             if (authParameters.Nonce != authToken.IdToken.Payload.Nonce) {
