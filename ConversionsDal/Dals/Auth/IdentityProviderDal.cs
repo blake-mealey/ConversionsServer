@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Chimerical.Conversions.Dal.Entities.Auth;
 using Chimerical.Conversions.Db;
+using Chimerical.Conversions.Db.Models.Auth;
 using Microsoft.EntityFrameworkCore;
 
 namespace Chimerical.Conversions.Dal.Dals.Auth
@@ -9,6 +12,8 @@ namespace Chimerical.Conversions.Dal.Dals.Auth
     public interface IIdentityProviderDal
     {
         Task<IdentityProviderEntity> GetIdentityProvider(string clientId);
+
+        Task<List<IdentityProviderEntity>> GetIdentityProviders();
     }
 
     public class IdentityProviderDal : BaseDal, IIdentityProviderDal
@@ -24,20 +29,29 @@ namespace Chimerical.Conversions.Dal.Dals.Auth
         {
             try
             {
-                var model =  await _db.IdentityProviders.SingleAsync(x => x.ClientId == clientId);
-                return new IdentityProviderEntity
-                {
-                    ClientId = model.ClientId,
-                    ClientSecret = model.ClientSecret,
-                    DisplayName = model.DisplayName,
-                    DiscoveryUrl = model.DiscoveryUrl,
-                    IconUrl = model.IconUrl
-                };
+                return ToEntity(await _db.IdentityProviders.SingleAsync(x => x.ClientId == clientId));
             }
             catch (InvalidOperationException e)
             {
                 throw new DataNotFoundException("IdentityProvider", clientId, e);
             }
+        }
+
+        public async Task<List<IdentityProviderEntity>> GetIdentityProviders()
+        {
+            return await _db.IdentityProviders.Select(x => ToEntity(x)).ToListAsync();
+        }
+
+        private static IdentityProviderEntity ToEntity(IdentityProvider identityProvider)
+        {
+            return new IdentityProviderEntity
+            {
+                ClientId = identityProvider.ClientId,
+                ClientSecret = identityProvider.ClientSecret,
+                DisplayName = identityProvider.DisplayName,
+                DiscoveryUrl = identityProvider.DiscoveryUrl,
+                IconUrl = identityProvider.IconUrl
+            };
         }
     }
 }

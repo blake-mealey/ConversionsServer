@@ -1,9 +1,12 @@
-﻿using Chimerical.Conversions.ClientModels.Models.Auth;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Chimerical.Conversions.ClientModels.Models.Auth;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
+using Chimerical.Conversions.Api.Converters.Auth;
 using Chimerical.Conversions.Api.Helpers;
 using Chimerical.Conversions.Dal.Dals.Auth;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +16,8 @@ namespace Chimerical.Conversions.Api.Services
     public interface IAuthService
     {
         Task<UserAuthModel> ExchangeCodeForToken(AuthParameters authParameters);
+
+        Task<List<IdentityProviderModel>> GetIdentityProviders();
     }
 
     public class AuthService : IAuthService
@@ -63,6 +68,16 @@ namespace Chimerical.Conversions.Api.Services
                 DisplayName = authToken.IdToken.GetClaim(JwtSecurityTokenClaimType.Name),
                 ProfilePictureUrl = authToken.IdToken.GetClaim(JwtSecurityTokenClaimType.Picture)
             };
+        }
+
+        public async Task<List<IdentityProviderModel>> GetIdentityProviders()
+        {
+            var identityProviders = await _identityProviderDal.GetIdentityProviders();
+
+            return identityProviders.Select(async x =>
+                    x.ToClientModel(await _identityProviderDiscoveryService.GetDiscoveryDocument(x)))
+                .Select(t => t.Result)
+                .ToList();
         }
     }
 }

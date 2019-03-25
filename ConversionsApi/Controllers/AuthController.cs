@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Chimerical.Conversions.Api.Helpers;
 using Chimerical.Conversions.Api.Services;
 using Chimerical.Conversions.ClientModels.Models.Auth;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ConversionsApi.Controllers
+namespace Chimerical.Conversions.Api.Controllers
 {
     [Route("api/[Controller]")]
     [ExceptionFilters]
@@ -25,6 +26,15 @@ namespace ConversionsApi.Controllers
             var authToken = await _authService.ExchangeCodeForToken(authParameters);
 
             return Ok(authToken);
+        }
+
+        [HttpGet]
+        [Route("IdentityProviders")]
+        public async Task<ActionResult<IdentityProviderModel>> GetIdentityProviders()
+        {
+            var identityProviders = await _authService.GetIdentityProviders();
+
+            return Ok(identityProviders);
         }
     }
 }
