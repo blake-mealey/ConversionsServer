@@ -16,17 +16,17 @@ namespace Chimerical.Conversions.Api.Services
 
     public class AuthService : IAuthService
     {
+        private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public AuthService(IConfiguration configuration)
+        public AuthService(HttpClient httpClient, IConfiguration configuration)
         {
+            _httpClient = httpClient;
             _configuration = configuration;
         }
 
         public async Task<UserAuthModel> ExchangeCodeForToken(AuthParameters authParameters)
         {
-            var httpClient = new HttpClient();
-
             var authCode = new AuthCodeModel
             {
                 Code = authParameters.Code,
@@ -37,7 +37,7 @@ namespace Chimerical.Conversions.Api.Services
             };
 
             var data = new StringContent(JsonConvert.SerializeObject(authCode), Encoding.UTF8, "application/json");
-            var request = await httpClient.PostAsync($"https://oauth2.googleapis.com/token",
+            var request = await _httpClient.PostAsync($"https://oauth2.googleapis.com/token",
                 data);
 
             var content = await request.Content.ReadAsStringAsync();

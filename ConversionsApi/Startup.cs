@@ -1,4 +1,5 @@
-﻿using Chimerical.Conversions.Api.Services;
+﻿using System.Net.Http;
+using Chimerical.Conversions.Api.Services;
 using Chimerical.Conversions.Dal.Dals.Auth;
 using Chimerical.Conversions.Dal.Dals.Conversions;
 using Chimerical.Conversions.Dal.Dals.Lists;
@@ -87,6 +88,8 @@ namespace Chimerical.Conversions.Api
         {
             _container.RegisterMvcControllers(app);
 
+            _container.Register(() => new HttpClient(), Lifestyle.Singleton);
+
             #region DALs
             _container.Register<IIdentityProviderDal, IdentityProviderDal>();
 
@@ -102,7 +105,8 @@ namespace Chimerical.Conversions.Api
             #region Services
             _container.Register<IConversionsService, ConversionsService>();
             _container.Register<IListsService, ListsService>();
-
+            
+            _container.Register<IIdentityProviderDiscoveryService, IdentityProviderDiscoveryService>(Lifestyle.Singleton);
             _container.Register<IAuthService, AuthService>();
             #endregion
 
