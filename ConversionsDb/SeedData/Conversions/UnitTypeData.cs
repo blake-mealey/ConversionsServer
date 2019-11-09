@@ -83,6 +83,12 @@ namespace Chimerical.Conversions.Db.SeedData.Conversions
             DisplayName = "Volume"
         };
 
+        public static readonly UnitType Astronomical = new UnitType
+        {
+            Id = 15,
+            DisplayName = "Astronomical"
+        };
+
         public static readonly List<UnitType> UnitTypes = new List<UnitType>
         {
             Area,
@@ -97,7 +103,8 @@ namespace Chimerical.Conversions.Db.SeedData.Conversions
             Speed,
 //            Temperature,
             Time,
-            Volume
+            Volume,
+            Astronomical
         };
     }
 }

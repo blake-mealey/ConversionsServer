@@ -928,6 +928,40 @@ namespace Chimerical.Conversions.Db.SeedData.Conversions
             UsFluidOunceToUsTablespoon,
             UsTablespoonToUTeaspoon
         };
+
+
+        #endregion
+
+        #region Astronomical Conversions
+
+        private static readonly Conversion AstronomicalUnitsToMetre = new Conversion
+        {
+            FromUnitSymbol = UnitData.AstronomicalUnit.Symbol,
+            ToUnitSymbol = UnitData.Metre.Symbol,
+            Multiplier = 149597870700
+        };
+
+        private static readonly Conversion ParsecToLightYear = new Conversion
+        {
+            FromUnitSymbol = UnitData.Parsec.Symbol,
+            ToUnitSymbol = UnitData.LightYear.Symbol,
+            Multiplier = 3.2616
+        };
+
+        private static readonly Conversion ParsecToAstronomicalUnit = new Conversion
+        {
+            FromUnitSymbol = UnitData.Parsec.Symbol,
+            ToUnitSymbol = UnitData.AstronomicalUnit.Symbol,
+            Multiplier = 206265
+        };
+
+        public static readonly List<Conversion> AstronomicalConversions = new List<Conversion>
+        {
+            AstronomicalUnitsToMetre,
+            ParsecToAstronomicalUnit,
+            ParsecToLightYear
+        };
+
         #endregion
     }
 }
